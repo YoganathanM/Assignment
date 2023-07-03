@@ -1,20 +1,19 @@
-﻿#region Exercise A02 - Guessing Game
+﻿using System;
+#region Exercise A02 - Guessing Game
 Random rnd = new Random ();
-int number = rnd.Next (101);
-int i;
+int number = rnd.Next (1, 101);
 Console.WriteLine ("Guess the number between 1 to 100");
-for (i = 0; i < 7; i++) {
+for (; ; ) {
    Console.Write ("Enter guessed number :");
-   int userNum = Convert.ToInt32 (Console.ReadLine ());
-   if (userNum == number) {
-      Console.WriteLine ($"Guessed number is {number} ");
-      break;
-   } else if (userNum > number) {
-      Console.WriteLine ("Number is high");
-   } else {
-      Console.WriteLine ("number is low");
-   }
+   string guessNumber = Console.ReadLine ();
+   int output;
+   bool check = int.TryParse (guessNumber, out output);
+   if (check == true) {
+      if (output == number) {
+         Console.WriteLine ($"Guessed number is {number} ");
+         break;
+      } else if (output > number) Console.WriteLine ("Number is high");
+      else Console.WriteLine ("Number is low");
+   } else { Console.WriteLine ("Given Input is not an integer"); }
 }
-if (i == 7) { Console.WriteLine ("Computer guess number is:" + number); };
 #endregion
-
