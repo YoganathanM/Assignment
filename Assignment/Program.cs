@@ -4,8 +4,7 @@
       ulong firstTerm = 0, secondTerm = 1;
       for (ulong i = 0; i < n; i++) {
          Console.WriteLine ($"f{i} : {firstTerm}");
-         ulong thirdTerm = firstTerm + secondTerm;
-         (firstTerm, secondTerm) = (secondTerm, thirdTerm);
+         (firstTerm, secondTerm) = (secondTerm, firstTerm + secondTerm);
       }
       break;
    } else Console.WriteLine ("Enter a valid number");
