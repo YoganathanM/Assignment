@@ -1,7 +1,7 @@
-﻿int reverse = 0;
-while (true) {
+﻿while (true) {
    Console.Write ("Enter number :");
-   if (int.TryParse (Console.ReadLine (), out int originalNumber) && originalNumber > 0) {
+   int reverse = 0;
+   if (int.TryParse (Console.ReadLine (), out int originalNumber) && originalNumber >= 0) {
       int number = originalNumber;
       while (number > 0) {
          int remainder = number % 10;
