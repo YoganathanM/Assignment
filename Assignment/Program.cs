@@ -1,26 +1,27 @@
 ﻿using System.Text;
-for (; ; ) {
-   Console.Write ("Enter a number : ");
-   string input = Console.ReadLine ();
-   if (int.TryParse (input, out int num)) {
-      ToBinary (num);
-      ToHexaDecimal (num);
+using static System.Console;
+while (true) {
+   Write ("Enter a number : ");
+   if (int.TryParse (ReadLine (), out int num) && num >= 0) {
+      if (Convert (num, 2) == ToBinary (num) && Convert (num, 16) == ToHexa (num)) {
+         WriteLine ($"Binary : {Convert (num, 2)}");
+         WriteLine ($"Hexadecimal : {Convert (num, 16)}");
+      } else
+         WriteLine ("Output value differ");
       break;
    } else
-      Console.WriteLine ("Give valid number");
+      WriteLine ("Give valid number");
 }
-static void ToBinary (int num) {
+static string ToBinary (int num) {
    var sb = new StringBuilder ();
    while (num > 0) {
       sb.Insert (0, num % 2);
       num /= 2;
    }
-   Console.WriteLine ($"Binary : {sb}");
+   return sb.ToString ();
 }
-
-static void ToHexaDecimal (int num) {
-   Dictionary<int, char> dict = new ()
-   {
+static string ToHexa (int num) {
+   Dictionary<int, char> dict = new () {
       { 10, 'A'}, {11, 'B' }, {12, 'C' }, {13, 'D' }, {14, 'E' }, {15, 'F' }
    };
    var sb = new StringBuilder ();
@@ -32,5 +33,7 @@ static void ToHexaDecimal (int num) {
          sb.Insert (0, rem);
       num /= 16;
    }
-   Console.WriteLine ($"hexadecimal : {sb}");
+   return sb.ToString ();
 }
+static string Convert (int num, int baseValue) => System.Convert.ToString (num, baseValue).ToUpper();
+
