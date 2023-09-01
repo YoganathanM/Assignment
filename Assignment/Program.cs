@@ -3,11 +3,10 @@ using static System.Console;
 while (true) {
    Write ("Enter a number : ");
    if (int.TryParse (ReadLine (), out int num) && num >= 0) {
-      if (Convert (num, 2) == ToBinary (num) && Convert (num, 16) == ToHexa (num)) {
-         WriteLine ($"Binary : {Convert (num, 2)}");
-         WriteLine ($"Hexadecimal : {Convert (num, 16)}");
-      } else
-         WriteLine ("Output value differ");
+      WriteLine ($"Binary computation {ToBinary(num)}");
+      WriteLine ($"Hexadecimal computation {ToHexa(num)}");
+      WriteLine ($"Binary string conversion {Convert(num, 2)}");
+      WriteLine ($"Hexadecimal string conversion {Convert (num, 16)}");
       break;
    } else
       WriteLine ("Give valid number");
