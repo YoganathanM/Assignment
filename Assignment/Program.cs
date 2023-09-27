@@ -1,7 +1,24 @@
-﻿namespace Assignment {
-   internal class Program {
-      static void Main (string[] args) {
-         Console.WriteLine ("Hello world!");
-      }
+﻿while (true) {
+   Console.Write ("Enter number to check armstrong or not : ");
+   string input = Console.ReadLine ();
+   int length = input.Length;
+   if (int.TryParse (input, out int number)) {
+      //int number = Convert.ToInt32 (input);
+      bool result = CheckArmstrong (number, length);
+      if (result) Console.WriteLine ($"{number} is an armstrong number");
+      else Console.WriteLine ($"{number} is Not an armstrong number");
+      break;
+   } else
+      Console.WriteLine ("Give valid number");
+}
+static bool CheckArmstrong (int number, int length) {
+   double sum = 0;
+   int tempNumber = number;
+   while (tempNumber > 0) {
+      int rem = tempNumber % 10;
+      tempNumber = tempNumber / 10;
+      sum = sum + Math.Pow (rem, length);
    }
+   if (number == sum) return true;
+   return false;
 }
