@@ -1,4 +1,5 @@
-﻿while (true) {
+﻿///<summary>Print diamond using asterisk</summary>
+while (true) {
    Console.Write ("Give number of rows : ");
    if (int.TryParse (Console.ReadLine (), out int n) && (n > 0)) {
       int i, l, s, j;
