@@ -1,4 +1,5 @@
-﻿while (true) {
+﻿//Print Pascal's triangle of a given number.
+while (true) {
    int i, s, j, l = 1;
    Console.Write ("Give number of rows : ");
    if (int.TryParse (Console.ReadLine (), out int n) && (n > 0)) {
