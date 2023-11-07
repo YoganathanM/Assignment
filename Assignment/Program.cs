@@ -1,4 +1,5 @@
-﻿while (true) {
+﻿// Check whether the given number is armstrong or not.
+while (true) {
    Console.Write ("Enter number to check armstrong or not : ");
    string input = (Console.ReadLine ()?? " ").Trim ();
    int length = input.Length;
