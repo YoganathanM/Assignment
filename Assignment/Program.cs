@@ -1,11 +1,14 @@
-﻿Console.Write ("Enter a value : ");
-int a =int.Parse(Console.ReadLine ());
-Console.Write ("Enter b value : ");
-int b = int.Parse (Console.ReadLine ());
-swap (a, b);
-
+﻿// Performs swapping of two variables values.
+Console.Write ("Enter A value : ");
+int a =int.Parse(Console.ReadLine ()??"");
+Console.Write ("Enter B value : ");
+int b = int.Parse (Console.ReadLine () ?? "");
+swap(a, b);
 void swap (int a, int b) {
-   (a, b) = (b, a);
-   Console.Write ($"a value is : {a}\n");
-   Console.Write ($"b value is : {b}");
+   int temp = 0;
+   temp = a;
+   a = b;
+   b = temp;
+   Console.WriteLine ($"A value is {a}");
+   Console.WriteLine ($"B value is {b}");
 }
