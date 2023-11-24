@@ -1,4 +1,5 @@
 ﻿Console.Write ("Enter a string to reduce duplicate : ");
+// Adding a empty space at the end for validating the last character if a string length is odd. 
 string str = Console.ReadLine () + " ";
 int count;
 do {
