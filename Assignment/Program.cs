@@ -1,15 +1,11 @@
-﻿// Find factorial for the given number.
-while (true) {
-   Console.Write ("Give number to find factorial : ");
-   if (int.TryParse (Console.ReadLine (), out int input) && (input > 0)) {
-      Factorial (input);
-      break;
+﻿   Console.Write ("Give number to find factorial : ");
+   if (int.TryParse (Console.ReadLine (), out int input) && input > 0 && input <=25) {
+      PrintFactorial (input);
    } else Console.WriteLine ("Given input is an invalid number!");
-}
-void Factorial (int input) {
+
+///<summary>Print factorial for the given number</summary>
+void PrintFactorial (int input) {
    int fact = 1;
-   for (int i = 1; i <= input; i++) {
-      fact = fact * i;
-   }
+   for (int i = 1; i <= input; i++) fact *= i;
    Console.WriteLine ($"Factorial of {input}! : {fact}");
 }
