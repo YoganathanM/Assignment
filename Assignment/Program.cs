@@ -1,20 +1,30 @@
-﻿//Swap two Number from the given number list
-Random rnd = new Random ();
-int input = rnd.Next (5, 10);
+﻿// Swap two Number from the given number list
+Random rnd = new();
+int randomNumber = rnd.Next (5, 10);
 Console.Write ("Input numbers : ");
-List<int> numbers = new List<int> ();
-for (int i = 0; i < input; i++) {
+List<int> numbers = new ();
+for (int i = 0; i < randomNumber; i++) {
    int n = rnd.Next (1, 10);
    numbers.Add (n);
    Console.Write (n + " ");
 }
-Console.WriteLine ($"\nSwap two index values between 1 to {input}");
+///<summary>validating two input number given by user</summary>
+Console.WriteLine ($"\nSwap two index values between 0 to {randomNumber}");
+GetIndex1:
 Console.Write ("Give index to be swapped : ");
-int index1 = int.Parse (Console.ReadLine ()!);
+if(!(int.TryParse(Console.ReadLine(), out int index1) && index1>=0)) {
+   Console.WriteLine ("Invalid index value");
+   goto GetIndex1;
+}
+GetIndex2:
 Console.Write ("Give index to be swapped : ");
-int index2 = int.Parse (Console.ReadLine ()!);
-SwapIndices (index1, index2);
+if (!(int.TryParse (Console.ReadLine (), out int index2) && index2 >= 0)) {
+   Console.WriteLine ("Invalid index value");
+   goto GetIndex2;
+}
+SwapByIndex (index1, index2);
 Console.Write ("Swapped output : ");
 for (int j = 0; j < numbers.Count; j++) Console.Write (numbers[j] + " ");
 
-void SwapIndices (int index1, int index2) => (numbers[index1 - 1], numbers[index2 - 1]) = (numbers[index2 - 1], numbers[index1 - 1]);
+///<summary>Interchanges the values in the index positions of an list</summary>
+void SwapByIndex (int index1, int index2) => (numbers[index1], numbers[index2]) = (numbers[index2], numbers[index1]);
