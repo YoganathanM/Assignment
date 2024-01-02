@@ -1,21 +1,18 @@
 ﻿namespace Training;
 class Spark {
    public static void Main () {
-      int moneyGiven = 0;
-      int chocolatePrice = 0;
-      int wrapperValue = 0;
+      Console.WriteLine ("\x1B[4m" + "Chocolate Wrapper Problem" + "\x1B[0m");
+      int moneyGiven = 0, chocolatePrice = 0, wrapperValue = 0;
       GetInput (ref moneyGiven, ref chocolatePrice, ref wrapperValue);
       Console.WriteLine ();
       GetResult (moneyGiven, chocolatePrice, wrapperValue);
    }
 
-   /// <summary>
-   /// Gets input from user
-   /// </summary>
+   /// <summary>Gets input from user</summary>
    /// <param name="moneyGiven"></param>
    /// <param name="chocolatePrice"></param>
    /// <param name="wrapperValue"></param>
-   /// <returns></returns>
+   /// <returns>Returns number of chocolates, remaining wrapper, remaining money </returns>
    public static (int, int, int) GetInput (ref int moneyGiven, ref int chocolatePrice, ref int wrapperValue) {
 GetMoney: Console.Write ("Enter money : ");
       if (!(int.TryParse (Console.ReadLine (), out moneyGiven) && moneyGiven > 0)) {
@@ -35,9 +32,7 @@ GetWrapper: Console.Write ("Enter wrapper value : ");
       return (moneyGiven, chocolatePrice, wrapperValue);
    }
 
-   /// <summary>
-   /// Prints results of number of chocolate, wrappers, remaining
-   /// </summary>
+   /// <summary>Prints results of number of chocolate, wrappers, remaining</summary>
    /// <param name="moneyGiven"></param>
    /// <param name="chocolatePrice"></param>
    /// <param name="wrapperValue"></param>
