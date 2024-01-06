@@ -32,7 +32,6 @@
                Console.WriteLine ($"Winner is {contestant[l]}");
                break;
             }
-            break;
          }
       }
    }
