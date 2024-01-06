@@ -19,15 +19,11 @@
          while (input.Length > 0) {
             int inputLength = input.Length;
             int count = 0, i = 0;
-            for (int j = i; j < inputLength; j++) {
-               if (input[i] == input[j]) count++;
-            }
+            for (int j = i; j < inputLength; j++) if (input[i] == input[j]) count++;
             contestant.Add (input[i]);
             totalVote.Add (count);
             string refactoredInput = "";
-            foreach (var a in input) {
-               if (a != input[i]) refactoredInput += a;
-            }
+            foreach (var a in input) if (a != input[i]) refactoredInput += a;
             input = refactoredInput;
          }
          int maximum = totalVote.Max ();
