@@ -9,9 +9,9 @@ class Spark {
    }
 
    /// <summary>Gets input from user</summary>
-   /// <param name="moneyGiven"></param>
-   /// <param name="chocolatePrice"></param>
-   /// <param name="wrapperValue"></param>
+   /// <param name="moneyGiven">Total money used by user</param>
+   /// <param name="chocolatePrice">Price of a chocolate</param>
+   /// <param name="wrapperValue">Offer chococlate for number of returning wrapper</param>
    /// <returns>Returns number of chocolates, remaining wrapper, remaining money </returns>
    public static (int, int, int) GetInput (ref int moneyGiven, ref int chocolatePrice, ref int wrapperValue) {
 GetMoney: Console.Write ("Enter money : ");
@@ -33,9 +33,6 @@ GetWrapper: Console.Write ("Enter wrapper value : ");
    }
 
    /// <summary>Prints results of number of chocolate, wrappers, remaining</summary>
-   /// <param name="moneyGiven"></param>
-   /// <param name="chocolatePrice"></param>
-   /// <param name="wrapperValue"></param>
    public static void GetResult (int moneyGiven, int chocolatePrice, int wrapperValue) {
       var (extraWrapper, remaining) = (0, 0);
       int chocolate = moneyGiven / chocolatePrice;
